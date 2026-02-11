@@ -1,0 +1,87 @@
+# ==============================
+# Node.js
+# ==============================
+
+# Dependências
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Arquivos de ambiente
+.env
+.env.*
+!.env.example
+
+# Build / Distribuição
+dist/
+build/
+coverage/
+
+# Cache
+.npm/
+.cache/
+.parcel-cache/
+
+# ==============================
+# Playwright
+# ==============================
+
+# Relatórios e resultados de testes
+playwright-report/
+test-results/
+blob-report/
+
+# Vídeos, screenshots e traces
+*.zip
+*.trace
+*.har
+
+# Diretórios padrão de output (caso configurados)
+artifacts/
+reports/
+
+# ==============================
+# IDE / Editores
+# ==============================
+
+# VS Code
+.vscode/
+!.vscode/extensions.json
+
+# JetBrains
+.idea/
+
+# Outros
+*.swp
+*.swo
+*~
+
+# ==============================
+# Sistema Operacional
+# ==============================
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ==============================
+# CI/CD (caso gere arquivos locais)
+# ==============================
+
+# Logs locais de CI
+*.log
+
+# ==============================
+# Arquivos temporários
+# ==============================
+
+tmp/
+temp/
