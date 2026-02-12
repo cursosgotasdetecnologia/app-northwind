@@ -1,0 +1,23 @@
+{
+  "name": "app-northwind",
+  "version": "1.0.0",
+  "description": "![Status](https://img.shields.io/badge/status-in%20progress-yellow)\r ![Playwright](https://img.shields.io/badge/Playwright-E2E%20Testing-45ba4b?logo=playwright&logoColor=white)\r ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-f7df1e?logo=javascript&logoColor=black)\r ![GitHub Actions](https://img.shields.io/badge/CI-GitHub%20Actions-2088FF?logo=githubactions&logoColor=white)\r ![License](https://img.shields.io/badge/license-MIT-blue)",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cursosgotasdetecnologia/app-northwind.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/cursosgotasdetecnologia/app-northwind/issues"
+  },
+  "homepage": "https://github.com/cursosgotasdetecnologia/app-northwind#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^25.2.3"
+  }
+}
