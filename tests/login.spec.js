@@ -1,5 +1,7 @@
 import { test, expect } from '@playwright/test';
 
+test.describe('Login - Cenários de Validação',()=>{
+  
 test('Validar acesso sem credenciais', async ({ page }) => {
   await page.goto('https://northwind-test-platform.vercel.app/');
   await page.getByTestId('email-input').click();
@@ -66,3 +68,5 @@ test('Verificar acesso com senha invalida', async ({ page }) => {
   await expect(page.getByText('Email ou senha inválidos')).toBeVisible();
 
 });
+
+})
