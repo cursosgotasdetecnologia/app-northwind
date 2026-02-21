@@ -16,3 +16,9 @@ test('test', async ({ page }) => {
   await expect(page.getByRole('heading')).toContainText('QA Automation Shop');
 });
 
+/*
+getByRole
+getByLabel / getByText / getByPlaceholder
+getByTestId
+CSS / XPath
+*/
