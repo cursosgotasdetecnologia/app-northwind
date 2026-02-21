@@ -2,9 +2,9 @@ import { test, expect } from "@playwright/test";
 
 test.describe("Login - Caminho Feliz", () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('https://northwind-test-platform.vercel.app/');
+    await page.goto('/');
   });
-  test("Deve realizar login com credenciais válidas", async ({ page }) => {   
+  test("Deve realizar login com credenciais válidas", async ({ page }) => {
     await page.getByTestId("email-input").click();
     await page.getByTestId("email-input").fill("admin@qatest.com");
     await page.getByTestId("password-input").click();
@@ -19,9 +19,9 @@ test.describe("Login - Caminho Feliz", () => {
 
 test.describe("Login - Cenários de Erro", () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('https://northwind-test-platform.vercel.app/');
+    await page.goto('/');
   });
-  test("Deve exibir erro ao tentar login sem credenciais", async ({ page }) => { 
+  test("Deve exibir erro ao tentar login sem credenciais", async ({ page }) => {
     await page.getByTestId("email-input").click();
     await page.getByTestId("email-input").fill("");
     await page.getByTestId("password-input").click();
@@ -32,7 +32,7 @@ test.describe("Login - Cenários de Erro", () => {
     ).toBeVisible();
   });
 
-  test("Deve exibir erro ao não informar senha inválida", async ({ page }) => {    
+  test("Deve exibir erro ao não informar senha inválida", async ({ page }) => {
     await page.getByTestId("email-input").click();
     await page.getByTestId("email-input").fill("admin@qatest.com");
     await page.getByTestId("password-input").click();
@@ -43,7 +43,7 @@ test.describe("Login - Cenários de Erro", () => {
     ).toBeVisible();
   });
 
-  test("Deve exibir erro ao não informar um email", async ({ page }) => {  
+  test("Deve exibir erro ao não informar um email", async ({ page }) => {
     await page.getByTestId("email-input").click();
     await page.getByTestId("email-input").fill("");
     await page.getByTestId("password-input").click();
@@ -54,7 +54,7 @@ test.describe("Login - Cenários de Erro", () => {
     ).toBeVisible();
   });
 
-  test("Deve exibir erro ao informar email invalido", async ({ page }) => { 
+  test("Deve exibir erro ao informar email invalido", async ({ page }) => {
     await page.getByTestId("email-input").click();
     await page.getByTestId("email-input").fill("admingmail.com");
     await page.getByTestId("password-input").click();
@@ -65,7 +65,7 @@ test.describe("Login - Cenários de Erro", () => {
     );
   });
 
-  test("Deve exibir erro ao informar senha inválida", async ({ page }) => {   
+  test("Deve exibir erro ao informar senha inválida", async ({ page }) => {
     await page.getByTestId("email-input").click();
     await page.getByTestId("email-input").fill("admin@qatest.com");
     await page.getByTestId("password-input").click();
