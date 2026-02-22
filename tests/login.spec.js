@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 
 test.describe("Login - Caminho Feliz", () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/');
+     await page.goto('/');
   });
   test("Deve realizar login com credenciais válidas", async ({ page }) => {
     await page.getByTestId("email-input").click();
@@ -19,7 +19,7 @@ test.describe("Login - Caminho Feliz", () => {
 
 test.describe("Login - Cenários de Erro", () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/');
+   await page.goto('/');
   });
   test("Deve exibir erro ao tentar login sem credenciais", async ({ page }) => {
     await page.getByTestId("email-input").click();
