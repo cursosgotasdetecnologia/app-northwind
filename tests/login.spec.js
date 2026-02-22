@@ -6,7 +6,7 @@ test.describe("Login - Caminho Feliz", () => {
     await page.goto("/");
   });
 
-test("Deve realizar login com credenciais válidas", async ({ page }) => {
+test("CA05 - Deve autenticar com sucesso e redirecionar para dashboard", async ({ page }) => {
 
     const DASHBOARD_TITULO = "QA Automation Shop"
     const RULLES_BUTTON = "Regras do Playground"
@@ -24,7 +24,7 @@ test.describe("Login - Cenários de Erro", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto("/");
   });
-  test("Deve exibir erro ao tentar login sem credenciais", async ({ page }) => {
+  test("CA01 - Deve exibir erro ao tentar login sem credenciais", async ({ page }) => {
     const dados = logindata.emailPassNull;
 
     await page.getByTestId("email-input").fill(dados.email);   
@@ -33,6 +33,16 @@ test.describe("Login - Cenários de Erro", () => {
     await expect(page.getByText(dados.expectMessage)).toBeVisible();
   });
 
+  test("CA02 - Deve exibir erro ao não informar um email", async ({ page }) => {
+    const dados = logindata.emailVazio;
+
+    await page.getByTestId("email-input").fill(dados.email);   
+    await page.getByTestId("password-input").fill(dados.password);
+    await page.getByTestId("login-button").click();
+    await expect(page.getByText(dados.expectMessage)).toBeVisible();
+  });
+  
+  
   test("Deve exibir erro ao não informar senha", async ({ page }) => {
     const dados = logindata.passwordVazio;
     
@@ -42,14 +52,7 @@ test.describe("Login - Cenários de Erro", () => {
     await expect(page.getByText(dados.expectMessage)).toBeVisible();
   });
 
-  test("Deve exibir erro ao não informar um email", async ({ page }) => {
-    const dados = logindata.emailVazio;
-
-    await page.getByTestId("email-input").fill(dados.email);   
-    await page.getByTestId("password-input").fill(dados.password);
-    await page.getByTestId("login-button").click();
-    await expect(page.getByText(dados.expectMessage)).toBeVisible();
-  });
+  
 
   test("Deve exibir erro ao informar email invalido", async ({ page }) => {
     const dados = logindata.invalidEmail;
