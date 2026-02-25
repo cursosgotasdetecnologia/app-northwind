@@ -16,7 +16,7 @@ class CadastroPage {
     this.mensagemEmailSemArroba = page.getByText('E-mail inválido')
     this.mensagemEmailSemDominio = page.getByText('E-mail inválido')
     this.mensagemEmailSemIdentificacao = page.getByText('E-mail inválido')
-    this.mensagemSenhaSemMaiuscula = page.getByText('E-mail inválido')
+    this.mensagemSenhaSemMaiuscula = page.getByText('Senha deve ter pelo menos uma letra maiúscula')
   }
 
   //Métodos de ação

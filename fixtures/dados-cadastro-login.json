@@ -1,8 +1,8 @@
 
 {
   "valido": {
-    "nome": "João Silva",
-    "email": "joaor.silva@test.com",
+    "nome": "dJioão Silva",
+    "email": "joaoidr.silva@test.com",
     "senha": "Teste@123",
     "senhaConfirmacao": "Teste@123"
   },
@@ -28,8 +28,8 @@
   "mensagemErro": "Nome deve conter apenas letras e espaços"
 },
   "emailDuplicado": {
-    "nome": "Novo Usuário",
-    "email": "admin@qatest.com",
+    "nome": "Novio Usuário",
+    "email": "aidmin@qatest.com",
     "senha": "Teste@123",
     "senhaConfirmacao": "Teste@123",
     "mensagemErro": "Email já cadastrado. Use outro email ou faça login."
@@ -60,6 +60,6 @@
     "email": "abc@gmail.com",
     "senha": "estew@123",
     "senhaConfirmacao": "estew@123",
-    "mensagemErro": "Senha deve treEmail inválido"
+    "mensagemErro": "Senha deve ter pelo menos uma letra maiúscula"
   }
 }

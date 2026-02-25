@@ -49,10 +49,11 @@ test.describe("Cadastro de Usuário", () => {
 });
 
   test.describe("Validação de Senha", () => {});
-    test("Deve exibir erro quando email não tiver a primeira parte antes do @", async () => {
+    test("Deve exibir erro quando senha não tiver ao menos uma letra maiúscula", async () => {
       const cenario = dados.senhaSemMaiusculas;
       await cadastroPage.preencherNome(cenario.nome);
       await cadastroPage.preencherEmail(cenario.email);
+      await cadastroPage.preencherSenha(cenario.senha);
       await expect(cadastroPage.mensagemSenhaSemMaiuscula).toBeVisible();
     });
   });
