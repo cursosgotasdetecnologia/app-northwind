@@ -11,34 +11,22 @@ class CadastroPage {
     this.mensagemSucesso = page.getByText(
       "Cadastro realizado com sucesso! Redirecionando...",
     );
-    this.mensagemNomeCurto = page.locator('text=Nome deve ter no mínimo 3 caracteres');    
-    this.mensagemNomeComNumero = page.getByText('Nome deve conter apenas letras e espaços')
-    this.mensagemEmailSemArroba = page.getByText('E-mail inválido')
-    this.mensagemEmailSemDominio = page.getByText('E-mail inválido')
-    this.mensagemEmailSemIdentificacao = page.getByText('E-mail inválido')
-    this.mensagemSenhaSemMaiuscula = page.getByText('Senha deve ter pelo menos uma letra maiúscula')
+
+}
+
+  async preencherFormulario(dados) {
+    await this.campoNome.fill(dados.nome);
+    await this.campoEmail.fill(dados.email);
+    await this.campoSenha.fill(dados.senha);
+    await this.campoConfirmaSenha.fill(dados.senhaConfirmacao);
   }
 
-  //Métodos de ação
-
-  async preencherNome(nome) {
-    await this.campoNome.fill(nome);
-    // await this.campoNome.blur();
+  getBotaoCadastrar() {
+    return this.botaoCadastrar;
   }
 
-  async preencherEmail(email) {
-    await this.campoEmail.fill(email);
-  }
-
-  async preencherSenha(senha) {
-    await this.campoSenha.fill(senha);
-  }
-  async preencherConfirmarSenha(senha) {
-    await this.campoConfirmaSenha.fill(senha);
-  }
-
-  async clicarCadastrar() {
-    await this.botaoCadastrar.click();
+  getMensagemErro(texto) {
+    return this.page.getByText(texto);
   }
 }
 module.exports = CadastroPage;

@@ -15,62 +15,72 @@ test.describe("Cadastro de Usuário", () => {
   test.describe("Validação de Nome", () => {
     test("Deve exibir erro quando nome tiver menos de 3 caracteres", async () => {
       const cenario = dados.nomeCurto;
-      await cadastroPage.preencherNome(cenario.nome);
-      await expect(cadastroPage.mensagemNomeCurto).toBeVisible();
+      await cadastroPage.preencherFormulario(cenario.dados);
+      await expect(
+        cadastroPage.getMensagemErro(cenario.esperado.mensagem),
+      ).toBeVisible();
+      await expect(cadastroPage.getBotaoCadastrar()).toBeDisabled();
     });
 
     test("Deve exibir erro quando nome tiver números", async () => {
       const cenario = dados.nomeComNumeros;
-      await cadastroPage.preencherNome(cenario.nome);
-      await expect(cadastroPage.mensagemNomeComNumero).toBeVisible();
+      await cadastroPage.preencherFormulario(cenario.dados);
+      await expect(
+        cadastroPage.getMensagemErro(cenario.esperado.mensagem),
+      ).toBeVisible();
+      await expect(cadastroPage.getBotaoCadastrar()).toBeDisabled();
     });
   });
 
   test.describe("Validação de Email", () => {
-
-  test("Deve exibir erro quando email não ter o @", async () => {
-    const cenario = dados.emailSemArroba;
-    await cadastroPage.preencherNome(cenario.nome);
-    await cadastroPage.preencherEmail(cenario.email);
-    await expect(cadastroPage.mensagemEmailSemArroba).toBeVisible();
-  });
-  test("Deve exibir erro quando email não tiver o domínio após o @", async () => {
-    const cenario = dados.emailSemDominio;
-    await cadastroPage.preencherNome(cenario.nome);
-    await cadastroPage.preencherEmail(cenario.email);
-    await expect(cadastroPage.mensagemEmailSemDominio).toBeVisible();
-  });
-  test("Deve exibir erro quando email não tiver a primeira parte antes do @", async () => {
-    const cenario = dados.emailSemIdentificacao;
-    await cadastroPage.preencherNome(cenario.nome);
-    await cadastroPage.preencherEmail(cenario.email);
-    await expect(cadastroPage.mensagemEmailSemIdentificacao).toBeVisible();
-  });
-});
-
-  test.describe("Validação de Senha", () => {});
-    test("Deve exibir erro quando senha não tiver ao menos uma letra maiúscula", async () => {
-      const cenario = dados.senhaSemMaiusculas;
-      await cadastroPage.preencherNome(cenario.nome);
-      await cadastroPage.preencherEmail(cenario.email);
-      await cadastroPage.preencherSenha(cenario.senha);
-      await expect(cadastroPage.mensagemSenhaSemMaiuscula).toBeVisible();
+    test("Deve exibir erro quando email não ter o @", async () => {
+      const cenario = dados.emailSemArroba;
+      await cadastroPage.preencherFormulario(cenario.dados);
+      await expect(
+        cadastroPage.getMensagemErro(cenario.esperado.mensagem),
+      ).toBeVisible();
+      await expect(cadastroPage.getBotaoCadastrar()).toBeDisabled();
+    });
+    test("Deve exibir erro quando email não tiver o domínio após o @", async () => {
+      const cenario = dados.emailSemDominio;
+      await cadastroPage.preencherFormulario(cenario.dados);
+      await expect(
+        cadastroPage.getMensagemErro(cenario.esperado.mensagem),
+      ).toBeVisible();
+      await expect(cadastroPage.getBotaoCadastrar()).toBeDisabled();
+    });
+    test("Deve exibir erro quando email não tiver a primeira parte antes do @", async () => {
+      const cenario = dados.emailSemIdentificacao;
+      await cadastroPage.preencherFormulario(cenario.dados);
+      await expect(
+        cadastroPage.getMensagemErro(cenario.esperado.mensagem),
+      ).toBeVisible();
+      await expect(cadastroPage.getBotaoCadastrar()).toBeDisabled();
     });
   });
 
+  test.describe("Validação de Senha", () => {
+    test("Deve exibir erro quando senha não tiver ao menos uma letra maiúscula", async () => {
+      const cenario = dados.senhaSemMaiusculas;
+      await cadastroPage.preencherFormulario(cenario.dados);
+      await expect(
+        cadastroPage.getMensagemErro(cenario.esperado.mensagem),
+      ).toBeVisible();
+      await expect(cadastroPage.getBotaoCadastrar()).toBeDisabled();
+    });
+  });
+
+  test.describe("Caminho Feliz", () => {
+    test("Cadastro de Usuário com dado válidos", async ({ page }) => {
+      const cenario = dados.valido;
+      await cadastroPage.preencherFormulario(cenario.dados);
+      await cadastroPage.getBotaoCadastrar().click();
+      await expect(
+        cadastroPage.getMensagemErro(cenario.esperado.mensagem),
+      ).toBeVisible();
+    });
+  });
+
+});
 
 
-
-// test('Cadastro de Usuário', async ({ page }) => {
-//   const cadastroPage = new CadastroPage(page);
-
-//   await page.goto('https://northwind-test-platform.vercel.app/');
-//   await page.getByRole('link', { name: 'Cadastre-se' }).click();
-//   await cadastroPage.preencherNome('Marieanaute Julianae Car');
-//   await cadastroPage.preencherEmail('marireeeutuliane@gmail.com');
-//   await cadastroPage.preencherSenha('SenhaForte@123');
-//   await cadastroPage.preencherConfirmarSenha('SenhaForte@123');
-//   await cadastroPage.clicarCadastrar();
-//   await expect(cadastroPage.mensagemSucesso).toBeVisible()
-
-// });
