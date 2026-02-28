@@ -1,0 +1,62 @@
+{
+  "valido": {
+    "tipo": "sucesso",
+    "dados": {
+      "name": "Camiseta Legal Tripla Face",
+      "price": "49.90",
+      "stock": "10",
+      "sku": "CAMI-001",
+      "category": "Acessórios",
+      "supplier": "BookExpress"
+    },
+    "esperado": {
+      "mensagem": "Produto adicionado com sucesso!"
+    }
+},
+
+ "nomeObrigatorio": {
+    "tipo": "erro",
+    "dados": {
+      "name": "",
+      "price": "49.90",
+      "stock": "10",
+      "sku": "CAMI-002",
+      "category": "Acessórios",
+      "supplier": "BookExpress"
+    },
+    "esperado": {
+      "mensagem": "Nome é obrigatório"
+    }
+  },
+
+
+  "nomeMuitoCurto": {
+    "tipo": "erro",
+    "dados": {
+      "name": "Abc",
+      "price": "49.90",
+      "stock": "10",
+      "sku": "CAMI-003",
+      "category": "Acessórios",
+      "supplier": "BookExpress"
+    },
+    "esperado": {
+      "mensagem": "Mínimo 6 caracteres"
+    }
+  },
+
+  "nomeComNumeros": {
+    "tipo": "erro",
+    "dados": {
+      "name": "Prod123",
+      "price": "49.90",
+      "stock": "10",
+      "sku": "CAMI-004",
+      "category": "Acessórios",
+      "supplier": "BookExpress"
+    },
+    "esperado": {
+      "mensagem": "Não pode conter números"
+    }
+  }  
+}
