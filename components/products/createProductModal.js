@@ -1,6 +1,14 @@
+
+const { expect } = require('@playwright/test');
+
 class CreateProductModal {
   constructor(page) {
     this.page = page;
+
+        // botões visíveis na página principal/modal
+    this.addProductButton = page.getByRole('button', { name: 'Adicionar Produto' });
+    this.modalHeading = page.getByRole('heading', { name: 'Adicionar Produto' });
+
 
     this.nameInput = page.getByTestId("add-product-name");
     this.priceInput = page.getByTestId("edit-product-price");
@@ -25,6 +33,11 @@ class CreateProductModal {
   async open() {
     await this.addProductButton.click();
     await expect(this.modalHeading).toBeVisible();
+    await expect(this.nameInput).toBeVisible();
+  }
+
+  async fillName(value) {
+    await this.nameInput.fill(value);
   }
 
   async fillPrice(value) {
