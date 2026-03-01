@@ -5,7 +5,7 @@ test('Acesso a pagina App Nortwind', async ({ page }) => {
 });
 
 
-test('test', async ({ page }) => {
+test('Acesso ao Dashboard de produto', async ({ page }) => {
   await page.goto('https://northwind-test-platform.vercel.app/');
   await page.getByText('Plataforma de Testes').click();  
   await page.getByTestId('email-input').click();

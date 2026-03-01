@@ -5,7 +5,7 @@
       "name": "Camiseta Legal Tripla Face",
       "price": "49.90",
       "stock": "10",
-      "sku": "CAMI-001",
+      "sku": "CAMI-0011",
       "category": "Acessórios",
       "supplier": "BookExpress"
     },
@@ -58,5 +58,26 @@
     "esperado": {
       "mensagem": "Não pode conter números"
     }
-  }  
+  },
+
+  "produtoParaEdicao": {
+  "tipo": "edicao",
+  "preCondicao": {
+    "name": "Produto Controle Edicao",
+    "price": "10.00",
+    "stock": "5",
+    "sku": "CTRL-001",
+    "category": "Acessórios",
+    "supplier": "BookExpress"
+  },
+  "dadosEdicao": {
+    "novoNome": "Produto Controle Editado",
+    "novoPreco": "20.00"
+  },
+  "esperado": {
+    "mensagem": "Produto atualizado com sucesso!"
+  }
+}
+
+
 }
