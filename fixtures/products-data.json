@@ -5,16 +5,15 @@
       "name": "Camiseta Legal Tripla Face",
       "price": "49.90",
       "stock": "10",
-      "sku": "CAMI-0011",
+      "sku": "CAMI-00113",
       "category": "Acessórios",
       "supplier": "BookExpress"
     },
     "esperado": {
       "mensagem": "Produto adicionado com sucesso!"
     }
-},
-
- "nomeObrigatorio": {
+  },
+  "nomeObrigatorio": {
     "tipo": "erro",
     "dados": {
       "name": "",
@@ -28,8 +27,6 @@
       "mensagem": "Nome é obrigatório"
     }
   },
-
-
   "nomeMuitoCurto": {
     "tipo": "erro",
     "dados": {
@@ -44,7 +41,6 @@
       "mensagem": "Mínimo 6 caracteres"
     }
   },
-
   "nomeComNumeros": {
     "tipo": "erro",
     "dados": {
@@ -60,24 +56,63 @@
     }
   },
 
+
+
+
   "produtoParaEdicao": {
-  "tipo": "edicao",
-  "preCondicao": {
-    "name": "Produto Controle Edicao",
-    "price": "10.00",
-    "stock": "5",
-    "sku": "CTRL-001",
-    "category": "Acessórios",
-    "supplier": "BookExpress"
+    "tipo": "edicao",
+    "preCondicao": {
+      "name": "Produto Controle Edicao",
+      "price": "10.00",
+      "stock": "5",
+      "sku": "CTRL-001",
+      "category": "Acessórios",
+      "supplier": "BookExpress"
+    },
+    "dadosEdicao": {
+      "novoNome": "Produto Controle Editado Duplo",
+      "novoPreco": "40.00"
+    },
+    "esperado": {
+      "mensagem": "Produto atualizado com sucesso!"
+    }
   },
-  "dadosEdicao": {
-    "novoNome": "Produto Controle Editado",
-    "novoPreco": "20.00"
+
+ "produtoCriarEEditar": {
+    "tipo": "edicao-pos-cadastro",
+    "preCondicao": {
+      "name": "Produto Edicao Rapida",
+      "sku": "EDIT-0053",
+      "price": "15.00",
+      "stock": "3",
+      "category": "Acessórios",
+      "supplier": "BookExpress"
+    },
+    "dadosEdicao": {
+      "novoNome": "Produto Edicao Confirmada",
+      "novoPreco": "30.00"
+    },
+    "esperado": {
+      "mensagem": "Produto atualizado com sucesso!"
+    }
   },
-  "esperado": {
-    "mensagem": "Produto atualizado com sucesso!"
+
+
+  "produtoInexistente": {
+    "tipo": "erro",
+    "nome": "Produto Inexeistente QA 9999",
+    "esperado": {
+      "mensagem": "Nenhum produto encontrado."
+    }
+  },
+
+  "edicaoNomeObrigatorio": {
+    "tipo": "erro",
+    "dados": {
+      "name": ""
+    },
+    "esperado": {
+      "mensagem": "Nome é obrigatório"
+    }
   }
-}
-
-
 }

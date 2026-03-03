@@ -1,5 +1,6 @@
 import { test, expect } from "@playwright/test";
 import CreateProductModal from "../components/products/createProductModal";
+import { faker } from "@faker-js/faker/locale/pt_BR";
 
 // dados de entrada/expectativa semelhantes ao fixture de cadastro
 const dados = require("../fixtures/products-data.json");
@@ -54,10 +55,20 @@ test.describe("Cadastro de Produto", () => {
     test("Deve criar o produto com sucesso quando os dados forem válidos", async () => {
       const cenario = dados.valido;
 
-      await modal.fillName(cenario.dados.name);
+      const nomeProduto = faker.commerce.productName();
+      const skuProduto =faker.string.alphanumeric(8).toUpperCase();
+           
+      //await modal.fillName(cenario.dados.name);
+      //await modal.fillSku(cenario.dados.sku);    
+      //uso do faker
+      await modal.fillSku(skuProduto);    
+      await modal.fillName(nomeProduto);    
+
+
+
       await modal.fillPrice(cenario.dados.price);
       await modal.fillStock(cenario.dados.stock);
-      await modal.fillSku(cenario.dados.sku);
+      
       await modal.selectCategory(cenario.dados.category);
       await modal.selectSupplier(cenario.dados.supplier);
       await modal.submit();
@@ -68,65 +79,48 @@ test.describe("Cadastro de Produto", () => {
 
 
 
-test.describe('[Gestão de Produtos] Elementos da Tela de Produtos', () => {
+  test.describe('[Gestão de Produtos] Elementos da Tela de Produtos', () => {
 
-  test('Deve exibir os filtros de busca e botão de limpeza', async ({ page }) => {
-    const productsPage = new ProductsPage(page);
+    test('Deve exibir os filtros de busca e botão de limpeza', async ({ page }) => {
+      const productsPage = new ProductsPage(page);
 
-    // Validação
-    await expect(productsPage.searchInput).toBeVisible();
-    await expect(productsPage.categoryFilter).toBeVisible();
-    await expect(productsPage.supplierFilter).toBeVisible();
-    //await expect(productsPage.clearFiltersButton).toBeVisible();
-  });
-
-  test('Deve exibir ação de edição disponível para o produto', async ({ page }) => {
-    const productsPage = new ProductsPage(page);
-
-    // Validação
-    await expect(productsPage.editButton).toBeVisible();
-  });
-
-  test('Deve exibir ação de exclusão disponível para o produto', async ({ page }) => {
-    const productsPage = new ProductsPage(page);
-
-    // Validação
-    await expect(productsPage.deleteButton).toBeVisible();
-  });
-
-  test('Deve exibir ação de visualização de detalhes do produto', async ({ page }) => {
-    const productsPage = new ProductsPage(page);
-
-    // Validação
-    await expect(productsPage.detailsButton).toBeVisible();
-  });
-
-  test('Deve exibir controles de paginação', async ({ page }) => {
-    const productsPage = new ProductsPage(page);
-
-    // Validação
-    await expect(productsPage.nextPageButton).toBeVisible();
-    await expect(productsPage.previousPageButton).toBeVisible();
-  });
-
-});
-
-  test.describe("[Gestão de Produtos] Manutenção de Produtos", () => {
-    test("Deve atualizar as informações do produto quando ele já estiver cadastrado", () => {
-      // seus testes aqui
+      // Validação
+      await expect(productsPage.searchInput).toBeVisible();
+      await expect(productsPage.categoryFilter).toBeVisible();
+      await expect(productsPage.supplierFilter).toBeVisible();
+      //await expect(productsPage.clearFiltersButton).toBeVisible();
     });
 
-    test("Deve permitir editar o produto imediatamente após o cadastro", () => {
-      // seus testes aqui
+    test('Deve exibir ação de edição disponível para o produto', async ({ page }) => {
+      const productsPage = new ProductsPage(page);
+
+      // Validação
+      await expect(productsPage.editButton).toBeVisible();
+    });
+
+    test('Deve exibir ação de exclusão disponível para o produto', async ({ page }) => {
+      const productsPage = new ProductsPage(page);
+
+      // Validação
+      await expect(productsPage.deleteButton).toBeVisible();
+    });
+
+    test('Deve exibir ação de visualização de detalhes do produto', async ({ page }) => {
+      const productsPage = new ProductsPage(page);
+
+      // Validação
+      await expect(productsPage.detailsButton).toBeVisible();
+    });
+
+    test('Deve exibir controles de paginação', async ({ page }) => {
+      const productsPage = new ProductsPage(page);
+
+      // Validação
+      await expect(productsPage.nextPageButton).toBeVisible();
+      await expect(productsPage.previousPageButton).toBeVisible();
     });
 
   });
-
-  test.describe("Regras de Existência do Produto", () => {
-    test("Não deve permitir edição quando o produto não for localizado", () => {});
-  });
-
-
 
 });
 

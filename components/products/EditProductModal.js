@@ -1,23 +1,63 @@
+class EditProductModal {
+  constructor(page) {
+    this.page = page;
 
+    // Locators dos campos do formulário de edição
+    this.nameInput = page.getByTestId('edit-product-name');
+    this.priceInput = page.getByTestId('edit-product-price');
+    this.stockInput = page.getByTestId('edit-product-stock');
+    this.skuInput = page.getByTestId('edit-product-sku');
 
-  await page.getByRole('button', { name: 'Edit' }).first().click();
-  await page.getByRole('heading', { name: 'Editar Produto' }).click();
-  await page.getByText('Nome *').click();
-  await page.getByTestId('edit-product-name').click();
-  await page.getByText('Preço (R$) *').click();
-  await page.getByTestId('edit-product-price').click();
-  await page.getByText('Estoque *').click();
-  await page.getByTestId('edit-product-stock').click();
-  await page.getByText('SKU *').click();
-  await page.getByTestId('edit-product-sku').click();
-  await page.getByText('Categoria *').click();
-  await page.getByRole('button', { name: 'Livros', exact: true }).click();
-  await page.getByRole('button', { name: 'Acessórios' }).click();
-  await page.getByText('Fornecedor *').click();
-  await page.getByRole('button', { name: 'Livros & Cia' }).click();
-  await expect(page.getByRole('button', { name: 'BookExpress' })).toBeVisible();
+    // Botões do modal
+    this.submitButton = page.getByTestId('edit-product-submit');
+    this.cancelButton = page.getByTestId('edit-product-cancel');
 
-  await page.getByRole('button', { name: 'Empresa Email Longo' }).click();
-  await page.getByTestId('edit-product-submit').click();
-  await page.getByTestId('error-name').click();
-  await page.getByTestId('edit-product-cancel').click();
+    // Heading do modal (valida abertura)
+    this.modalHeading = page.getByRole('heading', { name: 'Editar Produto' });
+
+    // Mensagens de erro
+    this.errorName = page.getByTestId('error-name');
+  }
+
+  // Métodos de preenchimento
+  async fillName(value) {
+    await this.nameInput.clear();
+    await this.nameInput.fill(value);
+  }
+
+  async fillPrice(value) {
+    await this.priceInput.clear();
+    await this.priceInput.fill(value);
+  }
+
+  async fillStock(value) {
+    await this.stockInput.clear();
+    await this.stockInput.fill(value);
+  }
+
+  async fillSku(value) {
+    await this.skuInput.clear();
+    await this.skuInput.fill(value);
+  }
+
+  // Ações do modal
+  async save() {
+    await this.submitButton.click();
+  }
+
+  async cancel() {
+    await this.cancelButton.click();
+  }
+
+  // Acessor de erro por campo
+  getError(field) {
+    switch (field) {
+      case 'name':
+        return this.errorName;
+      default:
+        throw new Error(`Campo de erro desconhecido: ${field}`);
+    }
+  }
+}
+
+module.exports = EditProductModal;

@@ -26,8 +26,8 @@ class ProductsPage {
     this.previousPageButton = page.getByRole('button', { name: 'Anterior' });
   }
 
- 
- async cancelAddProduct() {
+
+  async cancelAddProduct() {
     await this.addProductCancel.click();
   }
 
@@ -41,15 +41,11 @@ class ProductsPage {
     await this.clearFiltersButton.click();
   }
 
-  async openEditProduct() {
-    await this.editButton.click();
-  }
-
   async openDeleteConfirmation() {
     await this.deleteButton.click();
   }
 
- 
+
   async openProductDetails() {
     await this.detailsButton.click();
   }
@@ -62,6 +58,58 @@ class ProductsPage {
   async goToPreviousPage() {
     await this.previousPageButton.click();
   }
+
+  //AÇÕES DE EDITAR
+  
+  async editFirstProduct() {
+    const rows = this.page.locator('table tbody tr');
+
+    // Aguarda ao menos uma linha aparecer (tabela carrega via API)
+    await rows.first().waitFor({ state: 'visible', timeout: 5000 });
+
+    const count = await rows.count();
+
+    if (count === 0) {
+      throw new Error('Nenhum produto disponível para edição');
+    }
+
+
+
+
+
+
+
+    await rows.first().getByRole('button', { name: 'Edit' }).click();
+  }
+
+  async editProductByName(productName) {
+    const row = this.page.locator('table tbody tr').filter({ hasText: productName });
+    const count = await row.count();
+
+    if (count === 0) {
+      throw new Error(`Produto "${productName}" não encontrado`);
+    }
+
+    await row.getByRole('button', { name: 'Edit' }).click();
+  }
+
+  async openEditProduct() {
+    await this.editButton.click();
+  }
+
+
+  getRowByName(nome) {
+  return this.page.locator('table tr').filter({
+    has: this.page.locator('td', { hasText: nome })
+  });
+}
+
+getEditButtonFromRow(row) {
+  return row.getByRole('button', { name: 'Editar' });
+}
+
+
+  
 }
 
 module.exports = ProductsPage;
