@@ -12,12 +12,12 @@ class ProductsPage {
     this.clearFiltersButton = page.getByRole('button', { name: 'Limpar filtros' });
 
     this.editButton = page.getByRole('button', { name: 'Edit' }).first();
-    this.editHeading = page.getByRole('heading', { name: 'Editar Produto' });
-    this.editCancel = page.getByTestId('edit-product-cancel');
+    //this.editHeading = page.getByRole('heading', { name: 'Editar Produto' });
+    //this.editCancel = page.getByTestId('edit-product-cancel');
 
     this.deleteButton = page.getByRole('button', { name: 'Delete' }).first();
-    this.confirmationHeading = page.getByRole('heading', { name: 'Confirmação' });
-    this.confirmCancel = page.getByRole('button', { name: 'Cancelar' });
+    // this.confirmationHeading = page.getByRole('heading', { name: 'Confirmação' });
+    // this.confirmCancel = page.getByRole('button', { name: 'Cancelar' });
 
     this.detailsButton = page.getByRole('button', { name: 'Detalhes' }).first();
     this.detailsHeading = page.getByRole('heading', { name: 'Detalhes do Produto' });
@@ -107,6 +107,39 @@ class ProductsPage {
 getEditButtonFromRow(row) {
   return row.getByRole('button', { name: 'Editar' });
 }
+
+
+
+ async getLastProductName() {
+    const rows = this.page.locator('table tbody tr');
+    await rows.first().waitFor({ state: 'visible', timeout: 3000 });
+
+    const count = await rows.count();
+
+    const nomeProduto = await rows.nth(count - 1).locator('td').nth(1).textContent();
+    return nomeProduto.trim();
+  }
+
+  
+   // Clica em Delete no último produto da lista
+  async clickDeleteLastProduct() {
+    const rows = this.page.locator('table tbody tr');
+    await rows.first().waitFor({ state: 'visible', timeout: 3000 });
+    const count = await rows.count();
+    await rows.nth(count - 1).getByRole('button', { name: 'Delete' }).click();
+  }
+  
+  // Clica em Delete no primeiro produto da lista
+  async clickDeleteFirstProduct() {
+    const rows = this.page.locator('table tbody tr');
+    await rows.first().waitFor({ state: 'visible', timeout: 3000 });
+    await rows.first().getByRole('button', { name: 'Delete' }).click();
+  }
+  
+
+
+
+
 
 
   

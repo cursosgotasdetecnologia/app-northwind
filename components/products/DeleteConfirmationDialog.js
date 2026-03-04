@@ -1,11 +1,21 @@
+class DeleteConfirmationDialog {
+  constructor(page) {
+    this.page = page;
+    this.heading = page.getByRole("heading", { name: "Confirmação" });
+    this.bodyText = page.getByText(
+      "Tem certeza que deseja excluir este produto?",
+    );
+    this.confirmButton = page.getByRole("button", { name: "OK" });
+    this.cancelButton = page.getByRole("button", { name: "Cancelar" });
+  }
 
-  await page.getByRole('button', { name: 'Delete' }).first().click();
-  await page.getByRole('heading', { name: 'Confirmação' }).click();
-  await page.getByText('Tem certeza que deseja').click();
-  await page.getByRole('button', { name: 'OK' }).click();
-  await expect(page.getByRole('row', { name: '109 Meia Cano Alto Preta R$' })).toBeVisible();
+  async confirm() {
+    await this.confirmButton.click();
+  }
 
-  await page.getByRole('button', { name: 'Delete' }).first().click();
-  await expect(page.getByRole('heading', { name: 'Confirmação' })).toBeVisible();
+  async cancel() {
+    await this.cancelButton.click();
+  }
+}
 
-  await page.getByRole('button', { name: 'Cancelar' }).click();
+module.exports =  DeleteConfirmationDialog;
