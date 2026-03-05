@@ -20,7 +20,7 @@ class ProductsPage {
     // this.confirmCancel = page.getByRole('button', { name: 'Cancelar' });
 
     this.detailsButton = page.getByRole('button', { name: 'Detalhes' }).first();
-    this.detailsHeading = page.getByRole('heading', { name: 'Detalhes do Produto' });
+    //this.detailsHeading = page.getByRole('heading', { name: 'Detalhes do Produto' });
 
     this.nextPageButton = page.getByRole('button', { name: 'Próxima' });
     this.previousPageButton = page.getByRole('button', { name: 'Anterior' });
