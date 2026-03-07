@@ -38,7 +38,7 @@ console.log("aria:", await botao.getAttribute("aria-disabled"));
       ).toBeVisible();
       await expect(cadastroPage.getBotaoCadastrar()).toBeDisabled();
     });
-  });
+   });
 
   test.describe("Validação de Email", () => {
     test("Deve exibir erro quando email não ter o @", async () => {

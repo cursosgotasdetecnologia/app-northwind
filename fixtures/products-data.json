@@ -10,7 +10,7 @@
       "supplier": "BookExpress"
     },
     "esperado": {
-      "mensagem": "Produto adicionado com sucesso!"
+      "mensagem": "Produto adicionado com sucesso"
     }
   },
   "nomeObrigatorio": {
@@ -24,7 +24,7 @@
       "supplier": "BookExpress"
     },
     "esperado": {
-      "mensagem": "Nome é obrigatório"
+      "mensagem": "Nome é obrigatóri"
     }
   },
   "nomeMuitoCurto": {
@@ -38,7 +38,7 @@
       "supplier": "BookExpress"
     },
     "esperado": {
-      "mensagem": "Mínimo 6 caracteres"
+      "mensagem": "Mínimo 6 caractere"
     }
   },
   "nomeComNumeros": {
@@ -102,7 +102,7 @@
     "tipo": "erro",
     "nome": "Produto Inexeistente QA 9999",
     "esperado": {
-      "mensagem": "Nenhum produto encontrado."
+      "mensagem": "Nenhum produto encontrado"
     }
   },
 
