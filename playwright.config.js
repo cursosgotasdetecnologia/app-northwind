@@ -17,11 +17,17 @@ import { defineConfig, devices } from "@playwright/test";
 export default defineConfig({
   testDir: "./tests",
   /* Run tests in files in parallel */
+
+  timeout: 10000, // timeout do teste inteiro (3 segundos)
+  expect: {
+    timeout: 5000, // timeout de cada expect (5 segundos)
+  },
+
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
-  retries: process.env.CI ? 2 : 0,
+  retries: process.env.CI ? 2 : 1,
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
@@ -37,19 +43,30 @@ export default defineConfig({
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
     baseURL: process.env.BASE_URL,
+    //baseURL: 'http://localhost:3000',
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
+
+    // Viewport — tamanho da janela do browser
+    viewport: { width: 1440, height: 900 },
+
+    // Headless — false para ver o browser, true para CI
+    headless: true,
+
+    // SlowMo — adiciona delay entre acoes (em ms)
+     slowMo: 3000, // 500ms = 0.5 segundo entre cada acao
+
     trace: "on-first-retry",
     // trace: 'on',            // grava trace de todos os testes
     // trace: 'off',           // nunca grava trace
     // trace: 'retain-on-failure', // grava e mantem so os que falharam
 
-    //screenshot: "only-on-failure", // so tira quando o teste falha
+    screenshot: "only-on-failure", // so tira quando o teste falha
     //screenshot: 'on',           // tira em todos os testes
-    screenshot: "off", // nunca tira
+    //screenshot: "off", // nunca tira
 
-    //video: "retain-on-failure", // grava so quando o teste falha
+    video: "retain-on-failure", // grava so quando o teste falha
     // video: 'on',             // grava todos os testes
-    video: "off", // nunca grava
+    //video: "off", // nunca grava
     // video: 'on-first-retry', // grava so no primeiro retry
   },
 
