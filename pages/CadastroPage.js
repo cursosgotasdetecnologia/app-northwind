@@ -7,7 +7,8 @@ class CadastroPage {
     this.campoEmail = page.getByTestId("email-input");
     this.campoSenha = page.getByTestId("password-input");
     this.campoConfirmaSenha = page.getByTestId("confirm-password-input");
-    this.botaoCadastrar = page.getByRole("button", { name: "Criar Conta" });
+    //this.botaoCadastrar = page.getByRole("button", { name: "Criar Conta" });
+    this.botaoCadastrar = page.getByTestId("register-button");
     this.mensagemSucesso = page.getByText(
       "Cadastro realizado com sucesso! Redirecionando...",
     );
@@ -21,9 +22,13 @@ class CadastroPage {
     await this.campoConfirmaSenha.fill(dados.senhaConfirmacao);
   }
 
-  getBotaoCadastrar() {
-    return this.botaoCadastrar;
-  }
+  // getBotaoCadastrar() {
+  //   return this.botaoCadastrar;
+  // }
+getBotaoCadastrar() {
+  return this.page.getByTestId("register-button");
+}
+
 
   getMensagemErro(texto) {
     return this.page.getByText(texto);

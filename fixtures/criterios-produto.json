@@ -1,0 +1,27 @@
+{
+  "nomeObrigatorio": "Nome é obrigatório",
+  "nomeMuitoCurto": "Mínimo 6 caracteres",
+  "nomeMuitoLongo": "Máximo 40 caracteres",
+  "nomeComNumeros": "Não pode conter números",
+  "nomeComCaracteresEspeciais": "Caracteres especiais não permitidos",
+  "nomeEspacosDuplicados": "Não pode ter espaços duplicados",
+
+  "precoObrigatorio": "Preço é obrigatório",
+  "precoInvalido": "Deve ser um valor positivo",
+
+  "estoqueObrigatorio": "Estoque é obrigatório",
+  "estoqueInvalido": "Apenas números de 1 a 999",
+
+  "skuObrigatorio": "SKU é obrigatório",
+  "skuTamanhoInvalido": "Deve ter entre 5 e 20 caracteres",
+  "skuFormatoInvalido": "Apenas letras maiúsculas, números e hífen",
+  "skuNaoComecaLetra": "Deve começar com letra maiúscula",
+
+  "categoriaObrigatoria": "Categoria é obrigatória",
+  "fornecedorObrigatorio": "Fornecedor é obrigatório",
+
+  "cadastroSucesso": "Produto adicionado com sucesso!",
+  "limpezaErrosAoDigitar": "",
+  "validacaoAutenticacao": "Você precisa estar logado para adicionar produtos",
+  "erroConexao": "Erro de conexão"
+}
