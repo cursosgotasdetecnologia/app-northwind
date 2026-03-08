@@ -5,6 +5,7 @@ class ProductsPage {
     this.addProductButton = page.getByRole('button', { name: 'Adicionar Produto' });
     this.addProductHeading = page.getByRole('heading', { name: 'Adicionar Produto' });
     this.addProductCancel = page.getByTestId('add-product-cancel');
+    this.toastAddProduct = page.getByText('Produto adicionado com sucesso!');
 
     this.searchInput = page.getByRole('textbox', { name: 'Digite o nome do produto...' });
     this.categoryFilter = page.getByRole('combobox').first();
@@ -137,7 +138,13 @@ getEditButtonFromRow(row) {
   }
   
 
-
+//Para itens acima de 20 inserir comando abaixo
+// async waitForSuccessToast() {
+//    await this.page.waitForSelector('text=Produto adicionado com sucesso!', {
+//     state: 'detached', //detached = o elemento saiu do DOM.
+//     timeout: 5000
+//   });
+// }
 
 
 

@@ -3,6 +3,7 @@ import CreateProductModal from "../components/products/createProductModal";
 import { faker } from "@faker-js/faker/locale/pt_BR";
 import { label, severity, description, tag } from "allure-js-commons";
 
+
 // dados de entrada/expectativa semelhantes ao fixture de cadastro
 const dados = require("../fixtures/products-data.json");
 const ProductsPage = require("../pages/productsPage");
@@ -207,4 +208,24 @@ test.describe("Cadastro de Produto", () => {
       expect(true).toBeTruthy();
     });
   });
+
+  test.describe('Cadastro em Massa via JSON', () => {
+  let modal;
+  let productsPage;
+
+  test.beforeEach(async ({ page }) => {
+    modal = new CreateProductModal(page);
+    productsPage = new ProductsPage(page);
+
+    await page.goto('/');
+    await page.getByTestId('email-input').fill(process.env.USER_EMAIL);
+    await page.getByTestId('password-input').fill(process.env.USER_PASSWORD);
+    await page.getByTestId('login-button').click();
+
+    await page.waitForURL('**/products');
+    await page.locator('table tbody tr').first().waitFor({ state: 'visible', timeout: 15000 });
+  });
+
+  });
+
 });

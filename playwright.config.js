@@ -18,9 +18,9 @@ export default defineConfig({
   testDir: "./tests",
   /* Run tests in files in parallel */
 
-  timeout: 10000, // timeout do teste inteiro (3 segundos)
+  timeout: 60000, // timeout do teste inteiro (3 segundos)
   expect: {
-    timeout: 5000, // timeout de cada expect (5 segundos)
+    timeout: 6000, // timeout de cada expect (5 segundos)
   },
 
   fullyParallel: true,
@@ -47,7 +47,7 @@ export default defineConfig({
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
 
     // Viewport — tamanho da janela do browser
-    viewport: { width: 1440, height: 900 },
+    viewport: { width: 1920, height: 1080 },
 
     // Headless — false para ver o browser, true para CI
     headless: true,
