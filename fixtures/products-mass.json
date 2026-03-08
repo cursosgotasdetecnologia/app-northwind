@@ -1,0 +1,54 @@
+{
+    "valido": {
+        "produtos": [
+            {
+                "name": "Pretmitumuyu Travel Case",
+                "sku": "TRV8tyKuu2L9",
+                "price": 79.90,
+                "stock": 25,
+                "category": "Acessórios",
+                "supplier": "Tech Solutions Ltda"
+            },
+            {
+                "name": "Comttyutpuact Car Vacuum",
+                "sku": "CAR4ttyuuM7P2",
+                "price": 149.50,
+                "stock": 18,
+                "category": "Automotivo",
+                "supplier": "Tech Solutions Ltda"
+            },
+            {
+                "name": "Elutegtyaunte Leather Wallet",
+                "sku": "WALtu9uytT3X6e",
+                "price": 59.90,
+                "stock": 40,
+                "category": "Acessórios",
+                "supplier": "Livros & Cia"
+            },
+            {
+                "name": "Univeuttyrsale Phone Holder",
+                "sku": "PHNt7utyB5Q1e",
+                "price": 34.90,
+                "stock": 62,
+                "category": "Automotivo",
+                "supplier": "Editora Atlas"
+            },
+            {
+                "name": "Duryttuablee Travel Backpack",
+                "sku": "BAG2yttDu8R4e",
+                "price": 199.99,
+                "stock": 12,
+                "category": "Acessórios",
+                "supplier": "Livros & Cia"
+            },
+            {
+                "name": "Magnyuetttiec Car Mount",
+                "sku": "MNT5yZt1Ce8",
+                "price": 24.75,
+                "stock": 73,
+                "category": "Automotivo",
+                "supplier": "Editora Atlas"
+            }
+        ]
+    }
+}

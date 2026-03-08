@@ -1,0 +1,118 @@
+{
+  "valido": {
+    "tipo": "sucesso",
+    "dados": {
+      "name": "Camiseta Legal Tripla Face",
+      "price": "49.90",
+      "stock": "10",
+      "sku": "CAMI-00113",
+      "category": "Acessórios",
+      "supplier": "BookExpress"
+    },
+    "esperado": {
+      "mensagem": "Produto adicionado com sucesso"
+    }
+  },
+  "nomeObrigatorio": {
+    "tipo": "erro",
+    "dados": {
+      "name": "",
+      "price": "49.90",
+      "stock": "10",
+      "sku": "CAMI-002",
+      "category": "Acessórios",
+      "supplier": "BookExpress"
+    },
+    "esperado": {
+      "mensagem": "Nome é obrigatóri"
+    }
+  },
+  "nomeMuitoCurto": {
+    "tipo": "erro",
+    "dados": {
+      "name": "Abc",
+      "price": "49.90",
+      "stock": "10",
+      "sku": "CAMI-003",
+      "category": "Acessórios",
+      "supplier": "BookExpress"
+    },
+    "esperado": {
+      "mensagem": "Mínimo 6 caractere"
+    }
+  },
+  "nomeComNumeros": {
+    "tipo": "erro",
+    "dados": {
+      "name": "Prod123",
+      "price": "49.90",
+      "stock": "10",
+      "sku": "CAMI-004",
+      "category": "Acessórios",
+      "supplier": "BookExpress"
+    },
+    "esperado": {
+      "mensagem": "Não pode conter números"
+    }
+  },
+
+
+
+
+  "produtoParaEdicao": {
+    "tipo": "edicao",
+    "preCondicao": {
+      "name": "Produto Controle Edicao",
+      "price": "10.00",
+      "stock": "5",
+      "sku": "CTRL-001",
+      "category": "Acessórios",
+      "supplier": "BookExpress"
+    },
+    "dadosEdicao": {
+      "novoNome": "Produto Controle Editado Duplo",
+      "novoPreco": "40.00"
+    },
+    "esperado": {
+      "mensagem": "Produto atualizado com sucesso!"
+    }
+  },
+
+ "produtoCriarEEditar": {
+    "tipo": "edicao-pos-cadastro",
+    "preCondicao": {
+      "name": "Produto Edicao Rapida",
+      "sku": "EDIT-0053",
+      "price": "15.00",
+      "stock": "3",
+      "category": "Acessórios",
+      "supplier": "BookExpress"
+    },
+    "dadosEdicao": {
+      "novoNome": "Produto Edicao Confirmada",
+      "novoPreco": "30.00"
+    },
+    "esperado": {
+      "mensagem": "Produto atualizado com sucesso!"
+    }
+  },
+
+
+  "produtoInexistente": {
+    "tipo": "erro",
+    "nome": "Produto Inexeistente QA 9999",
+    "esperado": {
+      "mensagem": "Nenhum produto encontrado"
+    }
+  },
+
+  "edicaoNomeObrigatorio": {
+    "tipo": "erro",
+    "dados": {
+      "name": ""
+    },
+    "esperado": {
+      "mensagem": "Nome é obrigatório"
+    }
+  }
+}

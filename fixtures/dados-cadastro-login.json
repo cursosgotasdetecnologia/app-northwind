@@ -1,0 +1,124 @@
+{
+  "valido": {
+    "tipo": "sucesso",
+    "dados": {
+      "nome": "Jeeerreoãro Silva",
+      "email": "joaerrerreo.silva@test.com",
+      "senha": "Teste@123",
+      "senhaConfirmacao": "Teste@123"
+    },
+    "esperado": {
+      "mensagem": "Cadastro realizado com sucesso! Redirecionando..."
+    }
+  },
+
+  
+"nomeCurto": {
+    "tipo": "erro",
+    "dados": {
+      "nome": "Jo",
+      "email": "jo@test.com",
+      "senha": "Teste@123",
+      "senhaConfirmacao": "Teste@123"
+    },
+    "esperado": {
+      "mensagem": "Nome deve ter no mínimo 3 caracteres"
+    }
+  },
+
+"nomeComNumeros": {
+    "tipo": "erro",
+    "dados": {
+      "nome": "Joao123",
+      "email": "numeros.teste003@gmail.com",
+      "senha": "SenhaForte@123",
+      "senhaConfirmacao": "SenhaForte@123"
+    },
+    "esperado": {
+      "mensagem": "Nome deve conter apenas letras e espaços"
+    }
+  },
+
+
+
+ "emailDuplicado": {
+    "tipo": "erro",
+    "dados": {
+      "nome": "Usuário Existente",
+      "email": "admin@qatest.com",
+      "senha": "Teste@123",
+      "senhaConfirmacao": "Teste@123"
+    },
+    "esperado": {
+      "mensagem": "Email já cadastrado. Use outro email ou faça login."
+    }
+  },
+
+
+  "senhaSemMaiusculas": {
+    "tipo": "erro",
+    "dados": {
+      "nome": "Usuário Teste",
+      "email": "abc@gmail.com",
+      "senha": "teste@123",
+      "senhaConfirmacao": "teste@123"
+    },
+    "esperado": {
+      "mensagem": "Senha deve ter pelo menos uma letra maiúscula"
+    }
+  },
+
+  
+  "nomeVazio": {
+    "tipo": "erro",
+    "dados": {
+      "nome": "",
+      "email": "vazjo@test.com",
+      "senha": "Teste@123",
+      "senhaConfirmacao": "Teste@123"
+    },
+    "esperado": {
+      "mensagem": "Nome deve ter no mínimo 3 caracteres"
+    }
+  },
+
+  "emailSemDominio": {
+    "tipo": "erro",
+    "dados": {
+      "nome": "",
+      "email": "vazjo@",
+      "senha": "Teste@123",
+      "senhaConfirmacao": "Teste@123"
+    },
+    "esperado": {
+      "mensagem": "E-mail inválido"
+    }
+  },
+
+  "emailSemIdentificacao": {
+    "tipo": "erro",
+    "dados": {
+       "nome": "Novow Usuário",
+    "email": "@gmail.com",
+    "senha": "Testew@123",
+    "senhaConfirmacao": "Testew@123"
+    },
+    "esperado": {
+      "mensagem": "E-mail inválido"
+    }
+  },
+
+  
+  "emailSemArroba": {
+    "tipo": "erro",
+    "dados": {
+      "nome": "Usuário Teste",
+      "email": "admiwnatest.com",
+      "senha": "Teste@123",
+      "senhaConfirmacao": "Teste@123"
+    },
+    "esperado": {
+      "mensagem": "E-mail inválido"
+    }
+  }
+}
