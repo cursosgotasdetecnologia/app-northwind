@@ -1,0 +1,28 @@
+{
+  "valorPadrao": "",
+  "labelPadrao": "Todos os fornecedores",
+  "valores": [
+    { "value": "17", "label": "BookExpress" },
+    { "value": "5",  "label": "BookWorld Distribuidora" },
+    { "value": "13", "label": "DigitalPlus Suprimentos" },
+    { "value": "14", "label": "Editora Atlas" },
+    { "value": "8",  "label": "Editora Premium" },
+    { "value": "22", "label": "Empresa Email Longo" },
+    { "value": "3",  "label": "Fashion Import" },
+    { "value": "4",  "label": "GlobalTech Imports" },
+    { "value": "16", "label": "InfoParts Solutions" },
+    { "value": "2",  "label": "Livros & Cia" },
+    { "value": "11", "label": "MegaLivros Distribuição" },
+    { "value": "6",  "label": "ModaSul Fornecedora" },
+    { "value": "18", "label": "ModaTrend Suppliers" },
+    { "value": "21", "label": "Tech Solutions Ltda" },
+    { "value": "10", "label": "TechLine Components" },
+    { "value": "7",  "label": "TechStore Supplies" },
+    { "value": "1",  "label": "TechSupply Brasil" },
+    { "value": "19", "label": "TechTEste TesSolutions Ltda" },
+    { "value": "20", "label": "TechTEste TesSolutions Ltda" },
+    { "value": "15", "label": "TopWear Distribuidora" },
+    { "value": "12", "label": "UrbanFashion Group" },
+    { "value": "9",  "label": "VesteBem Atacadista" }
+  ]
+}

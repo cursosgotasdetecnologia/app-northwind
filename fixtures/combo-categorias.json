@@ -1,0 +1,23 @@
+{
+  "valorPadrao": "",
+  "labelPadrao": "Todas as categorias",
+  "valores": [
+    { "value": "Acessórios",            "label": "Acessórios" },
+    { "value": "Automotivo",            "label": "Automotivo" },
+    { "value": "Beleza & Cuidados",     "label": "Beleza & Cuidados" },
+    { "value": "Brinquedos",            "label": "Brinquedos" },
+    { "value": "Casa & Cozinha",        "label": "Casa & Cozinha" },
+    { "value": "Eletrônicos",           "label": "Eletrônicos" },
+    { "value": "Eletrônicos Portateis", "label": "Eletrônicos Portateis" },
+    { "value": "Eletrônicos uteis",     "label": "Eletrônicos uteis" },
+    { "value": "Esportes",              "label": "Esportes" },
+    { "value": "Games",                 "label": "Games" },
+    { "value": "Informática",           "label": "Informática" },
+    { "value": "Livros",                "label": "Livros" },
+    { "value": "Móveis",                "label": "Móveis" },
+    { "value": "Pets",                  "label": "Pets" },
+    { "value": "Roupas",                "label": "Roupas" },
+    { "value": "Teste 1770489185720",   "label": "Teste 1770489185720" },
+    { "value": "TesteCat",              "label": "TesteCat" }
+  ]
+}
