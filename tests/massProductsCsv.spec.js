@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 import fs from 'fs';
 import Papa from 'papaparse';
-const ProductsPage = require("../pages/productsPage");
+const ProductsPage = require("../pages/ProductsPage");
 const CreateProductModal = require("../components/products/createProductModal");
 
 // ← substitui o require do JSON

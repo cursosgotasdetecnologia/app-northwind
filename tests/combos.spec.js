@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-const ProductsPage = require('../pages/productsPage');
+const ProductsPage = require('../pages/ProductsPage');
 const fornecedores = require('../fixtures/combo-fornecedores.json');
 const categorias = require('../fixtures/combo-categorias.json');
 
