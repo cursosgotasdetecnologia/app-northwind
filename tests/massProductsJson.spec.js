@@ -3,6 +3,15 @@ const ProductsPage = require("../pages/productsPage");
 const CreateProductModal = require("../components/products/createProductModal");
 const dados = require("../fixtures/products-mass.json");
 
+
+
+
+
+
+
+
+
+
 test.describe("Cadastro em Massa via JSON", () => {
   let modal;
   let productsPage;
