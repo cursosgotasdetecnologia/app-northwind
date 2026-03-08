@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-const ProductsPage = require('../pages/productsPage');
+const ProductsPage = require('../pages/ProductsPage');
 
 test.describe('[Gestao de Produtos] Busca Dinamica', () => {
   let productsPage;

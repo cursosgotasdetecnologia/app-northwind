@@ -6,7 +6,7 @@ import { label, severity, description, tag } from "allure-js-commons";
 
 // dados de entrada/expectativa semelhantes ao fixture de cadastro
 const dados = require("../fixtures/products-data.json");
-const ProductsPage = require("../pages/productsPage");
+const ProductsPage = require("../pages/ProductsPage");
 
 test.describe("Cadastro de Produto", () => {
   let modal;
