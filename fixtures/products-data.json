@@ -24,7 +24,7 @@
       "supplier": "BookExpress"
     },
     "esperado": {
-      "mensagem": "Nome é obrigatóri"
+      "mensagem": "Nome é obrigatório"
     }
   },
   "nomeMuitoCurto": {
