@@ -12,8 +12,7 @@ class CadastroPage {
     this.mensagemSucesso = page.getByText(
       "Cadastro realizado com sucesso! Redirecionando...",
     );
-
-}
+  }
 
   async preencherFormulario(dados) {
     await this.campoNome.fill(dados.nome);
@@ -25,10 +24,9 @@ class CadastroPage {
   // getBotaoCadastrar() {
   //   return this.botaoCadastrar;
   // }
-getBotaoCadastrar() {
-  return this.page.getByTestId("register-button");
-}
-
+  getBotaoCadastrar() {
+    return this.page.getByTestId("register-button");
+  }
 
   getMensagemErro(texto) {
     return this.page.getByText(texto);
