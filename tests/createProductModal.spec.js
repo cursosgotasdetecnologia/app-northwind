@@ -1,6 +1,7 @@
 import { test, expect } from "@playwright/test";
 import CreateProductModal from "../components/products/createProductModal";
-import { faker } from "@faker-js/faker/locale/pt_BR";
+//import { faker } from "@faker-js/faker/locale/pt_BR";
+import { faker } from "@faker-js/faker/locale/en";
 import { label, severity, description, tag } from "allure-js-commons";
 
 
@@ -25,7 +26,7 @@ test.describe("Cadastro de Produto", () => {
     test("Deve exibir mensagem de erro quando o nome estiver vazio", async () => {
       await severity("critical");
       //await allure.severity("critical");
-      await allure.tag("validacao");
+      //await allure.tag("validacao");
 
       const cenario = dados.nomeObrigatorio;
 
@@ -110,7 +111,7 @@ test.describe("Cadastro de Produto", () => {
       page,
     }) => {
       await severity("minor");
-      await allure.tag("ui");
+      await tag("ui");
       const productsPage = new ProductsPage(page);
 
       // Validação
@@ -136,7 +137,7 @@ test.describe("Cadastro de Produto", () => {
 
     test("Não deve permitir criar produto sem categoria", async () => {
       await severity("blocker");
-      await allure.description(
+      await description(
         "Regra de negócio crítica: produto não pode existir sem categoria",
       );
 
@@ -149,7 +150,7 @@ test.describe("Cadastro de Produto", () => {
     test("Criar produto com sucesso", async () => {
       await severity("minor");
       //await allure.severity("normal");
-      await allure.tag("fluxo-principal");
+      await tag("fluxo-principal");
 
       const nomeProduto = faker.commerce.productName();
 
@@ -160,7 +161,7 @@ test.describe("Cadastro de Produto", () => {
     test("Botão editar deve existir", async ({ page }) => {
       await severity("minor");
 
-      await allure.tag("ui");
+      await tag("ui");
 
       const productsPage = new ProductsPage(page);
       await expect(productsPage.editButton).toBeVisible();
@@ -169,7 +170,7 @@ test.describe("Cadastro de Produto", () => {
     test("Botão detalhes deve existir", async ({ page }) => {
       await severity("trivial");
       //await allure.severity("trivial");
-      await allure.tag("ui");
+      await tag("ui");
 
       const productsPage = new ProductsPage(page);
       await expect(productsPage.detailsButton).toBeVisible();
