@@ -38,7 +38,7 @@
       "supplier": "BookExpress"
     },
     "esperado": {
-      "mensagem": "Mínimo 6 caractere"
+      "mensagem": "Mínimo 6 caracteres"
     }
   },
   "nomeComNumeros": {
