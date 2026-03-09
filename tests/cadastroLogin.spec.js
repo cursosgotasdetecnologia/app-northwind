@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 import CadastroPage from "../pages/CadastroPage";
-
+import { faker } from "@faker-js/faker";
 
 test.describe("Cadastro de Usuário", () => {
   let cadastroPage;
@@ -9,7 +9,6 @@ test.describe("Cadastro de Usuário", () => {
     cadastroPage = new CadastroPage(page);
     await page.goto("/");
     await page.getByRole("link", { name: "Cadastre-se" }).click();
-    
   });
 
   const dados = require("../fixtures/dados-cadastro-login.json");
@@ -17,11 +16,11 @@ test.describe("Cadastro de Usuário", () => {
   test.describe("Validação de Nome", () => {
     test("Deve exibir erro quando nome tiver menos de 3 caracteres", async () => {
       const cenario = dados.nomeCurto;
-      
-const botao = cadastroPage.getBotaoCadastrar();
 
-console.log("disabled:", await botao.isDisabled());
-console.log("aria:", await botao.getAttribute("aria-disabled"));
+      const botao = cadastroPage.getBotaoCadastrar();
+
+      console.log("disabled:", await botao.isDisabled());
+      console.log("aria:", await botao.getAttribute("aria-disabled"));
 
       await cadastroPage.preencherFormulario(cenario.dados);
       await expect(
@@ -38,7 +37,7 @@ console.log("aria:", await botao.getAttribute("aria-disabled"));
       ).toBeVisible();
       await expect(cadastroPage.getBotaoCadastrar()).toBeDisabled();
     });
-   });
+  });
 
   test.describe("Validação de Email", () => {
     test("Deve exibir erro quando email não ter o @", async () => {
@@ -81,14 +80,16 @@ console.log("aria:", await botao.getAttribute("aria-disabled"));
   test.describe("Caminho Feliz", () => {
     test("Cadastro de Usuário com dado válidos", async ({ page }) => {
       const cenario = dados.valido;
-      await cadastroPage.preencherFormulario(cenario.dados);
+      //await cadastroPage.preencherFormulario(cenario.dados);
+      await cadastroPage.preencherFormulario({
+        ...cenario.dados,
+        email: faker.internet.email(), // email unico a cada execucao
+      });
+
       await cadastroPage.getBotaoCadastrar().click();
       await expect(
         cadastroPage.getMensagemErro(cenario.esperado.mensagem),
       ).toBeVisible();
     });
   });
-
 });
-
-
