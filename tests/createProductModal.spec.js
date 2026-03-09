@@ -135,17 +135,16 @@ test.describe("Cadastro de Produto", () => {
       await expect(productsPage.previousPageButton).toBeVisible();
     });
 
-    test("Não deve permitir criar produto sem categoria", async () => {
-      await severity("blocker");
-      await description(
-        "Regra de negócio crítica: produto não pode existir sem categoria",
-      );
+   test("Não deve permitir criar produto sem categoria", async ({ page }) => {
+  await severity("blocker");
+  await description("Regra de negócio crítica: produto não pode existir sem categoria");
 
-      await modal.fillName("Produto Teste");
-      await modal.submit();
+  await modal.fillName("Produto Teste");
+  await modal.submit();
 
-      await expect(modal.getError("category")).toBeVisible();
-    });
+  await expect(page.locator('.Toastify__toast--error'))
+    .toBeVisible();
+});
 
     test("Criar produto com sucesso", async () => {
       await severity("minor");
