@@ -7,7 +7,7 @@
 ![License](https://img.shields.io/badge/license-MIT-blue)
 
 ---
-
+## TESTE MERGE CI
 ## 📌 Sobre o Projeto
 
 O **app-northwind** é um projeto de estudo profissional focado na **automação de testes End-to-End (E2E)** utilizando **Playwright com JavaScript puro**.
